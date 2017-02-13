@@ -1,0 +1,9 @@
+select 'ACCEPT:TOTAL' as description, 
+success_count || ':' || total_record as acceptance_rate
+from (select count(en.applicantid) as success_count
+from f16_12_enrollsin en, f16_12_visarecord v
+where en.serviceid=v.serviceid
+and v.visastatus = 'accept'
+group by v.visastatus),
+(select count(*) as total_record
+from f16_12_visarecord);

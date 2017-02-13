@@ -1,0 +1,12 @@
+select DISTINCT emp_no, emp_name, rating
+from (select emp_no, emp_name, rating
+        from (select em.employeeid as emp_no,em.firstname as emp_name
+        from F16_12_employee em),
+            (select r.employeeid emp_no_rating, avg(r.rating) as rating
+            from F16_12_rates r
+            group by r.employeeid)
+      where emp_no = emp_no_rating),
+      (select enroll.employeeID emp, serv.servicetype
+        from F16_12_enrollsin enroll, F16_12_service serv
+      where serv.servicetype='Tutoring' and serv.serviceID = enroll.serviceID)
+where emp_no = emp;

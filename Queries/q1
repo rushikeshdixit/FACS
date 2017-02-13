@@ -1,0 +1,16 @@
+select month_name,
+nvl(temp_total_enquiries,0) as total_enquiries,
+total_enrolls
+from (select monthname,
+count(enquiries) as temp_total_enquiries
+from (select to_char(dateofEnquiry, 'Month') as monthname,
+dateofEnquiry as enquiries
+from F16_12_enquiresAt)
+group by monthname),
+(select month_name as month_name,
+count(appl_id) as total_enrolls
+from (select enroll.applicantId as appl_id,
+to_char(enroll.applicantdoj , 'Month') as month_name
+from f16_12_enrollsIn enroll)
+group by month_name)
+where monthname(+) = month_name;

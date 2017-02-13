@@ -1,0 +1,17 @@
+select branch_id, income - expense as profit
+from (select branch_id,
+      sum(service_fee) as income
+        from (select br.branchID as branch_id,
+                br.serviceID branch_service_id
+                from F16_12_enrollsIn br
+                order by serviceID
+             ), (select serv.serviceID as service_id,
+            serv.serviceFee as service_fee
+            from F16_12_service serv
+        )
+        where branch_id = service_id
+        group by branch_id),
+        (select branch as exp_branch,sum(monthly_salary) as expense
+        from F16_12_employee
+        group by branch)
+        where branch_id=exp_branch;

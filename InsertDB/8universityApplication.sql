@@ -1,0 +1,18 @@
+INSERT INTO universityApplication VALUES (7,'Technical University Munich','accept');
+INSERT INTO universityApplication VALUES (12,'The University of Texas at Arlington','accept');
+INSERT INTO universityApplication VALUES (14,'Imperial College London','reject');
+INSERT INTO universityApplication VALUES (17,'University of Dhaka','accept');
+INSERT INTO universityApplication VALUES (21,'Imperial College London','reject');
+INSERT INTO universityApplication VALUES (23,'The University of Texas Arlington','reject');
+INSERT INTO universityApplication VALUES (25,'Nanyag Technological University','reject');
+INSERT INTO universityApplication VALUES (29,'University of Toronto','accept');
+INSERT INTO universityApplication VALUES (31,'University of Bologna','reject');
+INSERT INTO universityApplication VALUES (33,'University of Toronto','accept');
+INSERT INTO universityApplication VALUES (38,'Technical University of Munich','accept');
+INSERT INTO universityApplication VALUES (42,'University of British Columbia','accept');
+INSERT INTO universityApplication VALUES (43,'Frele University of Berlin','reject');
+INSERT INTO universityApplication VALUES (46,'The University of Texas at Arlington','reject');
+INSERT INTO universityApplication VALUES (52,'Frele University of Berlin','accept');
+INSERT INTO universityApplication VALUES (54,'University of Bologna','accept');
+INSERT INTO universityApplication VALUES (58,'Technical University of Munich','accept');
+INSERT INTO universityApplication VALUES (65,'The University of Texas at Arlington','accept');
